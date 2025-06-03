@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCL 2025/2026 Simülatörü</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-image"></div>
+    <div class="container">
+        <h1 class="ucl-header">
+            UCL 2025/2026 Simülatörü
+            <span id="detailed-draw-link" class="detailed-view-link">Detaylı Gör</span>
+        </h1>
+
+        <div class="main-content">
+            <div class="left-panel">
+                <h2>Lig Aşaması Tablosu</h2>
+                <div id="league-table-container">
+                    <table id="league-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Takım</th>
+                                <th>O</th>
+                                <th>G</th>
+                                <th>B</th>
+                                <th>M</th>
+                                <th>A</th>
+                                <th>Y</th>
+                                <th>Av.</th>
+                                <th>P</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Lig tablosu satırları JavaScript tarafından buraya eklenecek -->
+                        </tbody>
+                    </table>
+                </div>
+                <button id="simulate-button" disabled>Simülasyonu Başlat</button>
+            </div>
+
+            <div class="right-panel">
+                <div id="weekly-fixtures-container">
+                    <h3>Haftalık Fikstürler</h3>
+                    <!-- Haftalık fikstürler JavaScript tarafından buraya eklenecek -->
+                </div>
+
+                <div id="player-stats-container">
+                    <h3>Oyuncu İstatistikleri Krallıkları</h3>
+                    <div class="leaderboard-section">
+                        <h4>Gol Krallığı</h4>
+                        <ul id="top-goal-scorers-list" class="leaderboard-list">
+                            <!-- Gol krallığı JavaScript tarafından buraya eklenecek -->
+                        </ul>
+                    </div>
+                    <div class="leaderboard-section">
+                        <h4>Asist Krallığı</h4>
+                        <ul id="top-assists-list" class="leaderboard-list">
+                            <!-- Asist krallığı JavaScript tarafından buraya eklenecek -->
+                        </ul>
+                    </div>
+                    <div class="leaderboard-section">
+                        <h4>Kart Krallığı</h4>
+                        <ul id="card-leaders-list" class="leaderboard-list">
+                            <!-- Kart krallığı JavaScript tarafından buraya eklenecek -->
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="knockout-results" style="display: none;">
+                    <!-- Eleme aşaması sonuçları JavaScript tarafından buraya eklenecek -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Fikstür detayları ve maç istatistikleri için pop-up'lar -->
+        <div id="fixture-popup" class="popup"></div>
+        <div id="match-stats-popup" class="popup"></div>
+
+        <!-- Detaylı Kura Çekimi Modalı -->
+        <div id="detailed-draw-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>UCL Lig Aşaması Kura Çekimi</h2>
+                <div class="draw-pots-container">
+                    <div class="draw-pot" id="pot1-display">
+                        <h3>1. Torba</h3>
+                        <ul class="pot-list"></ul>
+                    </div>
+                    <div class="draw-pot" id="pot2-display">
+                        <h3>2. Torba</h3>
+                        <ul class="pot-list"></ul>
+                    </div>
+                    <div class="draw-pot" id="pot3-display">
+                        <h3>3. Torba</h3>
+                        <ul class="pot-list"></ul>
+                    </div>
+                    <div class="draw-pot" id="pot4-display">
+                        <h3>4. Torba</h3>
+                        <ul class="pot-list"></ul>
+                    </div>
+                </div>
+                <div id="current-draw-info">
+                    <p>Çekilen Takım: <span id="drawing-team-name"></span> <img id="drawing-team-logo" class="team-logo-small" src="" alt=""></p>
+                    <p>Eşleşen Rakipler:</p>
+                    <ul id="drawn-opponents-list"></ul>
+                </div>
+                <button id="next-draw-button">Sıradaki Takımı Çek</button>
+            </div>
+        </div>
+
+        <!-- Özel Mesaj Kutusu -->
+        <div id="custom-message-box" class="custom-message-box">
+            <p id="message-text"></p>
+            <button id="message-close-button">Tamam</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
